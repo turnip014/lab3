@@ -12,8 +12,9 @@ def BMI_Menu():
     print("Enter the Height in metres, and Weight in kilograms, in this form: a,b \n")
     bmilist = input()
     print("\nEntered information = ",bmilist.split,"\n")
-    print(round(BMI(float(bmilist[0]),float(bmilist[1])),2),"\n")
-    return
+    bmi = round(BMI(float(bmilist[0]),float(bmilist[1])),2)
+    print(bmi,"\n")
+    return bmi
 
 def AVG_Menu():
     print("\nEnter the numbers in this form: a,b,c,d\n")
