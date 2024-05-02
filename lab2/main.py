@@ -1,3 +1,4 @@
+
 ## Global Variable(s)
 app = 0
 
@@ -7,23 +8,31 @@ def BMI(Height,Weight):
     result = Weight/pow(Height,2)
     return result
 
-def Display_Main_Menu():
-    print('\nWhat is the height in metres? ')
-    Height = input()
-    print('\nWhat is the weight in kilograms? ')
-    Weight = input()
-    print (round (BMI(float(Height),float(Weight)),2),"\n")
+def BMI_Menu():
+    print("Enter the Height in metres, and Weight in kilograms, in this form: a,b \n")
+    bmilist = input()
+    print("\nEntered information = ",bmilist.split,"\n")
+    print(round(BMI(float(bmilist[0]),float(bmilist[1])),2),"\n")
+    return
 
-def Calc_Avg():
+def AVG_Menu():
+    print("\nEnter the numbers in this form: a,b,c,d\n")
+    numlist = input()
+    numlist = numlist.split
+    print(numlist)
     return
 
 while(app == 0):
-    print("Enter 0 to start a program that calculates BMI")
+    print("\nEnter 0 to start a program that calculates BMI\n", "\nEnter 1 to start a program that calculates the average of 4 numbers\n")
     app = input()
 
     if float(app) == 0:
-        Display_Main_Menu()
+        BMI_Menu()
         app = 0
         continue
-    elif float(app) !=0 :
+    elif float(app) == 1:
+        AVG_Menu()
+        app = 0
+        continue
+    else:
         break
